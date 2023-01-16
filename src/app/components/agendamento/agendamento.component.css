@@ -1,0 +1,121 @@
+.body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #2c46c4, #11306e);
+  margin: 5px 0 0 0;
+}
+
+
+@media screen {
+
+  .divvisitante {
+
+    width: 60%;
+    height: 250px;
+    margin: 70px auto;
+    background-color: white;
+  }
+
+  .divobserv{
+    display: block;
+    width: 100%;
+    height: 80%;
+    margin: auto ;
+    background-color: white;
+  }
+
+  #observacao{
+    margin-left: 1%;
+    margin-top: 2%;
+    width: 90%;
+    max-width: 130%;
+    min-width: 10%;
+  }
+
+
+  #labelvisitante{
+    margin-left: 1%;
+    font-size: 20px;
+
+  }
+
+
+  #data{
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 20%;
+    max-width: 40%;
+    min-width: 15%;
+  }
+
+  #hora{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 10%;
+    max-width: 15%;
+    min-width: 7%;
+  }
+
+  #status{
+    margin-top: -8.9%;
+    margin-left: 2%;
+    width: 20%;
+    max-width: 40%;
+    min-width: 15%;
+  }
+
+  #codVisitante{
+    margin-left: 1%;
+    margin-top: 2%;
+    width: 42%;
+    max-width: 50%;
+    min-width: 20%;
+
+  }
+
+  #btn-busca-visitante{
+    padding-top: 0.8%;
+    padding-bottom: 0.3%;
+    margin-left: 0%;
+    width: 5%;
+    min-width: 7%;
+  }
+
+  #btn-novo-visitante{
+    padding-top: 0.8%;
+    padding-bottom: 0.3%;
+    margin-left: 3%;
+    width: 5%;
+    min-width: 7%;
+  }
+
+
+
+  #btn-sair{
+    margin-left: 80%;
+    width: 4.5%;
+    min-width: 4%;
+  }
+
+  button{
+    margin-left: 1.5%;
+    width: 8%;
+    min-width: 10%;
+  }
+
+
+#dataCriacao{
+  margin-left: 10px;
+  width: 30%;
+  max-width: 150px;
+}
+
+#usuario{
+  margin-left: 1%;
+  width: 10%;
+  max-width: 100px;
+}
+}
+
+
+

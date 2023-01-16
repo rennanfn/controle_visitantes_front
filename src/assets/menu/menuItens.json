@@ -1,0 +1,57 @@
+[
+    {
+        "visible": true, "link": "/inicio", "title": "Meu Espaço", "icon": "home"
+    },
+    {
+        "desc": "PEDIDO",
+        "visible": false, "link": "/pedido", "title": "Pedidos", "icon": "shopping_cart",
+        "children": [
+            { "visible": false, "link": "/montagem", "title": "Novo Pedido", "icon": "add_box" },
+            { "visible": false, "link": "/listar-meus-pedidos", "title": "Meus Pedidos", "icon": "account_box" },
+            { "visible": false, "link": "/listar-pedidos-clientes", "title": "Pedidos de Clientes", "icon": "supervised_user_circle" }
+
+        ]
+    },
+    {
+        "desc": "CARGA",
+        "visible": false, "link": "/carga", "title": "Cargas", "icon": "local_shipping",
+        "children": [
+            { "visible": false, "link": "/agendamento", "title": "Agendamento", "icon": "watch_later" },
+            { "visible": false, "link": "/3", "title": "Teste 3", "icon": "dashboard" }
+        ]
+    },
+    {
+        "desc": "CLIENTE",
+        "visible": false, "link": "/cliente", "title": "Clientes", "icon": "supervised_user_circle",
+        "children": [
+            { "visible": false, "link": "/meu-cadastro", "title":"Pré-Cadastro", "icon": "account_box" },
+            { "visible": false, "link": "/meus-clientes", "title": "Meus Clientes", "icon": "assignment" },
+            { "visible": false, "link": "/meus-clientes/:cod_cliente", "title": "Meus Clientes", "icon": "assignment" }
+            
+        ]
+    },
+    {
+        "desc": "PRODUTO",
+        "visible": false, "link": "/produto", "title": "Produtos", "icon": "sports_bar",
+        "children": [
+            { "visible": false, "link": "/listar-produtos", "title": "Listar", "icon": "sports_bar" } 
+        ]
+    },
+    {
+        "desc": "FINANCEIRO",
+        "visible": false, "link": "/financeiro", "title": "Financeiro", "icon": "account_balance",
+        "children": [
+            { "visible": false, "link": "/titulos-meus-clientes", "title": "Títulos de Clientes", "icon": "price_change" },
+            { "visible": false, "link": "/meus-titulos", "title": "Meus Títulos", "icon": "price_change" }
+    
+        ]
+    },
+    {
+        "desc": "NOTAFISCAL",
+        "visible": false, "link": "/nota-fiscal", "title": "Nota Fiscal", "icon": "description",
+        "children": [
+            { "visible": false, "link": "/nota-fiscal-clientes", "title": "NFs de Clientes", "icon": "description" },
+            { "visible": false, "link": "/minhas-notas-fiscais", "title": "Minhas NFs", "icon": "description" }            
+        ]
+    }
+]

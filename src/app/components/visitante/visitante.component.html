@@ -1,0 +1,79 @@
+<h1 mat-dialog-title>Cadastro de Visitante</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="cadVisitanteForm">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" name="nome" />
+      <mat-error *ngIf="this.cadVisitanteForm.get('nome')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>RG</mat-label>
+      <input matInput formControlName="rg" name="rg" />
+      <mat-error *ngIf="this.cadVisitanteForm.get('rg')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Empresa</mat-label>
+      <input matInput formControlName="empresa" name="empresa" />
+      <mat-error *ngIf="this.cadVisitanteForm.get('empresa')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <!-- <div class="card">
+      <div class="card-body">
+        <mat-label>Foto Visitante</mat-label>
+        <div>
+           <mat-toolbar>
+              Display files names
+              <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+
+              Browse Button
+              <button mat-flat-button color="primary">Browse File</button>
+            </mat-toolbar>
+
+           Fetch selected filed on change
+
+          <input
+            type="file"
+            #fileInput
+            id="uploadFile"
+            (change)="uploadFileEvt($event)"
+            name="uploadFile"
+          />
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          <img src="{{ dataimage }}" width="200px" />
+        </div>
+      </div>
+    </div> -->
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    class="btn-outline mat-elevation-z5"
+    (click)="salvarVisitante()"
+  >
+    Salvar
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    color="warn"
+    class="btn-outline mat-elevation-z5"
+    (click)="cancelar()"
+  >
+    Cancelar
+  </button>
+</div>

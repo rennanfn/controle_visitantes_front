@@ -1,4 +1,20 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+// {
+//   "files": [],
+//   "references": [
+//     {
+//       "path": "./tsconfig.app.json"
+//     },
+//     {
+//       "path": "./tsconfig.spec.json"
+//     },
+//     {
+//       "path": "./e2e/tscofing.json"
+//     }
+// ]
+// }
+
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -7,6 +23,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
+    "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -25,6 +42,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
+    "strictPropertyInitialization": false,
     "strictTemplates": true
   }
 }

@@ -3,7 +3,22 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  NODE_API: 'http://localhost:3333',
+
+  toastConfig: {
+    positionClass: 'toast-top-center',
+    preventDuplicates: true,
+    enableHtml: true,
+    progressBar: true,
+    timeOut: 6000,
+  },
+};
+
+export const TOKEN_STORAGE = 'visitante-token';
+export const CRYPTO = {
+  key: '202209@Çdc!',
 };
 
 /*

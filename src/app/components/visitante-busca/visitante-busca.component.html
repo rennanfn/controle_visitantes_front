@@ -1,0 +1,147 @@
+<h1 mat-dialog-title>Buscar Visitante</h1>
+<div class="">
+  <div>
+    <br />
+
+    <p-table
+      #tb
+      id="table"
+      [columns]="this.cols"
+      [value]="this.visitantesData"
+      [resizableColumns]="true"
+      [autoLayout]="true"
+      styleClass="p-datatable-customers p-datatable-sm  p-datatable-gridlines p-datatable-responsive-demo"
+      [rowHover]="true"
+      [paginator]="true"
+      responsiveLayout="scroll"
+      selectionMode="single"
+      dataKey="cod_visitante"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      currentPageReportTemplate="Mostrando {first} de {last} num total de {totalRecords} registros"
+    >
+      <ng-template pTemplate="caption">
+        <div class="caption">
+          <span class="p-input-icon-left p-ml-auto">
+            <i class="pi pi-search"></i>
+            <input
+              style="margin-right: 10%"
+              pInputText
+              type="text"
+              [(ngModel)]="searchField"
+              (input)="tb.filterGlobal(searchField, 'contains')"
+              placeholder="Buscar Visitante"
+            />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="cod_visitante" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Cód. Visitante
+              <span>
+                <p-sortIcon field="cod_visitante"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="nome" colspan="3">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Nome
+              <span>
+                <p-sortIcon field="nome"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="rg" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              RG
+              <span>
+                <p-sortIcon field="rg"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="empresa" colspan="2">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Empresa
+              <span>
+                <p-sortIcon field="empresa"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="data_criacao" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Data Cadastro
+              <span>
+                <p-sortIcon field="data_criacao"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+
+          <th colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">Editar</div>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-visitante let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="visitante">
+          <td colspan="1" (click)="this.selecionarVisitante(visitante.nome)">
+            <b class="cod_visitante"> Cód. Visitante</b>
+            {{ visitante.cod_visitante }}
+          </td>
+
+          <td colspan="3" (click)="this.selecionarVisitante(visitante.nome)">
+            <b class="nome">Nome</b>
+            {{ visitante.nome }}
+          </td>
+          <td colspan="1" (click)="this.selecionarVisitante(visitante.nome)">
+            <b class="rg">RG</b>
+            {{ visitante.rg }}
+          </td>
+          <td colspan="2" (click)="this.selecionarVisitante(visitante.nome)">
+            <b class="empresa">Empresa</b>
+            {{ visitante.empresa }}
+          </td>
+          <td colspan="1" (click)="this.selecionarVisitante(visitante.nome)">
+            <b class="data_criacao">Data Criação</b>
+            {{ visitante.data_criacao }}
+          </td>
+
+          <td class="p-text-center">
+            <a
+              mat-mini-fab
+              (click)="this.detalhesVisitante(visitante.cod_visitante)"
+              class="mat-elevation-z5"
+              color="primary"
+              matTooltip="Editar"
+              tooltipPosition="bottom"
+            >
+              <mat-icon> edit </mat-icon>
+            </a>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="14" style="color: red; text-align: center">
+            Nenhum visitante encontrado
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button
+    type="button"
+    mat-raised-button
+    color="warn"
+    class="btn-outline mat-elevation-z5"
+    (click)="cancelar()"
+  >
+    Cancelar
+  </button>
+</mat-dialog-actions>

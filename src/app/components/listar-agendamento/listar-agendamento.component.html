@@ -1,0 +1,212 @@
+<div class="title">
+  <h1 style="margin: 2% 0 0 10%">Lista de Visitantes</h1>
+  <div class="btn-adduser">
+    <button
+      *ngIf="this.permissao_addusuario"
+      id="btn-adduser"
+      type="button"
+      mat-raised-button
+      color="primary"
+      class="btn-outline mat-elevation-z5"
+      matTooltip="Novo Usuário"
+      (click)="addUsuario()"
+    >
+      <mat-icon>person_add</mat-icon>
+    </button>
+  </div>
+  <button
+    id="btn-sair"
+    type="button"
+    mat-raised-button
+    color="warn"
+    class="btn-outline mat-elevation-z5"
+    matTooltip="Sair do Sistema"
+    (click)="logout()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+  <br />
+</div>
+
+<div class="body">
+  <br />
+  <br />
+  <div class="listaAgendamento">
+    <p-table
+      #tb
+      id="table"
+      [columns]="this.cols"
+      [value]="this.agendamentoData"
+      [resizableColumns]="true"
+      [autoLayout]="true"
+      styleClass="p-datatable-customers p-datatable-sm  p-datatable-gridlines p-datatable-responsive-demo"
+      [rowHover]="false"
+      [paginator]="true"
+      responsiveLayout="scroll"
+      dataKey="cod_agendamento"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      currentPageReportTemplate="Mostrando {first} de {last} num total de {totalRecords} registros"
+    >
+      <ng-template pTemplate="caption">
+        <div class="caption">
+          <button
+            mat-mini-fab
+            class="mat-elevation-z5"
+            color="primary"
+            matTooltip="Novo Agendamento"
+            tooltipPosition="bottom"
+            (click)="addAgendamento()"
+          >
+            <mat-icon> add </mat-icon>
+          </button>
+          <span class="p-input-icon-left p-ml-auto" style="margin-left: 75%">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              [(ngModel)]="searchField"
+              (input)="tb.filterGlobal(searchField, 'contains')"
+              placeholder="Buscar Agendamento"
+            />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="cod_agendamento" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Cód. Agendamento
+              <span>
+                <p-sortIcon field="cod_agendamento"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="nome_visitante" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Visitante
+              <span>
+                <p-sortIcon field="nome_visitante"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="data" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Data
+              <span>
+                <p-sortIcon field="data"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="data" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Hora
+              <span>
+                <p-sortIcon field="hora"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="observacao" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Observação
+              <span>
+                <p-sortIcon field="observacao"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="status" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Status
+              <span>
+                <p-sortIcon field="status"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+          <th pSortableColumn="data_criacao" colspan="1">
+            <div class="p-d-flex p-jc-between p-ai-center">
+              Data Cadastro
+              <span>
+                <p-sortIcon field="data_criacao"></p-sortIcon>
+              </span>
+            </div>
+          </th>
+
+          <th colspan="2">
+            <div class="p-d-flex p-jc-between p-ai-center">Editar</div>
+          </th>
+        </tr></ng-template
+      >
+      <ng-template pTemplate="body" let-agendamento let-rowIndex="rowIndex">
+        <tr
+          [ngStyle]="{
+            background:
+              agendamento.status === 'Cancelado' && 'rgb(240, 150, 150)'
+          }"
+        >
+          <td colspan="1">
+            <b class="cod_agendamento"> Cód. Agendamento</b>
+            {{ agendamento.cod_agendamento }}
+          </td>
+
+          <td colspan="1">
+            <b class="nome_visitante">Visitante</b>
+            {{ agendamento.visitante }}
+          </td>
+          <td colspan="1">
+            <b class="data">Data</b>
+            {{ agendamento.data }}
+          </td>
+          <td colspan="1">
+            <b class="data">Hora</b>
+            {{ agendamento.hora }}
+          </td>
+          <td colspan="1">
+            <b class="observacao">Observação</b>
+            {{ agendamento.observacao }}
+          </td>
+          <td colspan="1">
+            <b class="status">Status</b>
+            {{ agendamento.status }}
+          </td>
+          <td colspan="1">
+            <b class="data_criacao">Data Cadastro</b>
+            {{ agendamento.data_criacao }}
+          </td>
+
+          <td class="p-text-center">
+            <a
+              mat-mini-fab
+              class="mat-elevation-z5"
+              color="primary"
+              matTooltip="Editar"
+              tooltipPosition="bottom"
+              (click)="this.detalhesAgendamento(agendamento.cod_agendamento)"
+            >
+              <mat-icon> edit </mat-icon>
+            </a>
+          </td>
+          <td class="p-text-center">
+            <a
+              mat-mini-fab
+              class="mat-elevation-z5"
+              color="warn"
+              matTooltip="Excluir"
+              tooltipPosition="bottom"
+              (click)="this.delete(agendamento.cod_agendamento)"
+            >
+              <mat-icon> delete </mat-icon>
+            </a>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="14" style="color: red; text-align: center">
+            Nenhum visitante encontrado
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,1 +1,170 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("assets/toastr.css");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+   font-size: 0.8rem;
+}
+
+.spinner {
+  z-index: 10;
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+
+.actived-link {
+  color: orange;
+}
+.fundo-login {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("./assets/img/fundo02.jpg");
+  /* background-image: url(./assets/img/fundo-autenticacao-logo.jpg); */
+  opacity: 0.9;
+  /* background-position: center -px; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-header {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.login-wrapper {
+  height: 100%;
+}
+
+
+
+.positronx {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.box {
+  position: absolute;
+  top: auto;
+  opacity: 1;
+  float: left;
+  padding: 60px 30px 40px 30px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  z-index: 5;
+  max-width: 350px;
+}
+
+.box.back {
+  transform: scale(.95);
+  -webkit-transform: scale(.95);
+  -ms-transform: scale(.95);
+  top: -20px;
+  opacity: .8;
+  z-index: -1;
+}
+
+/* .box:before { */
+  /* content: "";
+  margin-left: 28%;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  position: absolute;
+  top: -75px;
+  background: snow;
+  border-radius: 100%;
+  /* border: 10px solid #3d3f86; */
+  /* border: 10px solid #fff; */
+  /* box-shadow: 5px 5px 5px #00000059;*/
+  /* box-shadow: 0 0 1.3em  #00000059; */
+  /* box-shadow: 10px 5px 5px black; */
+  /* background-image: url(./favicon.ico);
+  background-position: center;
+  background-size: cover;
+  left: 0;
+  transform: scale(1);
+  -webkit-transform: scale(.95);
+  -ms-transform: scale(.95);
+  z-index: -1;  */
+/* } */
+
+.login-wrapper .example-form {
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-wrapper .example-full-width,
+.login-wrapper .btn-block {
+  width: 100%;
+}
+
+.login-wrapper mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 600;
+}
+
+.login-wrapper mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.example-header-image {
+  background-image: url('assets/img/logo-cdc.png');
+  background-size: cover;
+}
+
+.login-wrapper .mat-card {
+  padding: 30px;
+}
+
+.login-wrapper .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #FFF7FA;
+}
+
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.8375em 0;
+}
+
+.mat-form-field {
+  width: 100%;
+  font-size: 12px;
+  /* line-height: 10px !important; */
+}
+
+
+button:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}

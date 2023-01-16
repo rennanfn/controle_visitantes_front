@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Cadastro de Usuário</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="cadUsuarioForm">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Usuário</mat-label>
+      <input matInput formControlName="usuario" name="usuario" />
+      <mat-error *ngIf="this.cadUsuarioForm.get('usuario')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input
+        matInput
+        formControlName="senha"
+        name="senha"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <a mat-icon-button matSuffix type="none" (click)="hide = !hide">
+        <mat-icon matSuffix>{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </a>
+      <mat-error *ngIf="this.cadUsuarioForm.get('senha')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    class="btn-outline mat-elevation-z5"
+    (click)="addUsuario()"
+  >
+    Salvar
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    color="warn"
+    class="btn-outline mat-elevation-z5"
+    (click)="cancelar()"
+  >
+    Cancelar
+  </button>
+</div>

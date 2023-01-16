@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Editar Visitante</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="this.formEditVisitante">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-6">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Cód. Visitante</mat-label>
+            <input
+              matInput
+              name="cod_visitante"
+              formControlName="cod_visitante"
+              readonly
+            />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput name="nome" formControlName="nome" />
+            <mat-error *ngIf="this.formEditVisitante.get('nome')?.errors"
+              >Campo Obrigatório</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>RG</mat-label>
+            <input matInput name="rg" formControlName="rg" />
+            <mat-error *ngIf="this.formEditVisitante.get('rg')?.errors"
+              >Campo Obrigatório</mat-error
+            > </mat-form-field
+          ><mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Empresa</mat-label>
+            <input matInput name="empresa" formControlName="empresa" />
+            <mat-error *ngIf="this.formEditVisitante.get('empresa')?.errors"
+              >Campo Obrigatório</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-content>
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    class="btn-outline mat-elevation-z5"
+    (click)="salvarEdicao()"
+  >
+    Salvar
+  </button>
+  <button
+    style="margin-left: 10px"
+    type="button"
+    mat-raised-button
+    color="warn"
+    class="btn-outline mat-elevation-z5"
+    (click)="cancelar()"
+  >
+    Cancelar
+  </button>
+</mat-dialog-content>

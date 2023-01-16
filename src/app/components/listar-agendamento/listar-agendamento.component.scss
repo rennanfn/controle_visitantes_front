@@ -1,0 +1,146 @@
+:host ::ng-deep {
+
+  .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+      display: inline;
+  }
+
+  .row-accessories {
+      background-color: rgba(0,0,0,.15) !important;
+  }
+
+  .p-column-filter-menu-button{
+    color: #FFF;
+  }
+  .p-column-filter-menu-button-active  {
+    background:#FFF ;
+    color: #3f51b5;
+
+  }
+
+  .p-column-filter-menu-button-active :hover    {
+  color:#FFF;
+  }
+
+  .p-overlaypanel .p-overlaypanel-content {
+      padding: 0 !important;
+      width: 30rem !important;
+      min-height: 15rem;
+  }
+
+  .p-paginator-buttom .p-paginator {
+      flex-wrap: none !important;
+  }
+
+}
+
+#table th{
+  background: #3f51b5;
+  color: #FFF;
+
+}
+
+.listaAgendamento{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+
+.body{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #2c46c4, #11306e);
+  margin: 10px 0 0 0;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+#btn-sair{
+  margin-left: 3%;
+  margin-top: 2%;
+  width: 4%;
+  min-width: 4%;
+}
+
+.btn-adduser{
+  margin-top: 2%;
+  margin-left: 57%;
+
+}
+
+.caption{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+@media screen and (min-width: 70rem) {
+  :host ::ng-deep {
+      .p-datatable {
+          .p-datatable-tbody > tr > td > b  {
+              display: none;
+              text-align: left;
+          }
+
+          .p-sortable-column {
+              color: #fff;
+              .p-sortable-column-icon{
+                  color: #FFF;
+
+              }
+
+          }
+      }
+
+  }
+}
+
+@media screen and (max-width: 70rem) {
+  :host ::ng-deep {
+      .p-datatable {
+
+          .p-datatable-header .ng-star-inserted {
+              display: inline-block !important;
+          }
+
+          &.p-datatable-responsive-demo {
+              .p-datatable-thead > tr > th,
+              .p-datatable-tfoot > tr > td {
+                  display: none !important;
+              }
+
+              .p-datatable-tbody > tr > td > b {
+                  display: inline;
+              }
+
+
+              .p-datatable-tbody > tr > td {
+                  text-align: left;
+                  display: block;
+                  border: 1px #cecece solid;
+                  width: 100%;
+                  float: left;
+                  clear: left;
+                  border: 0 none;
+
+                  .p-column-title {
+                      padding: .4rem;
+                      min-width: 30%;
+                      display: inline-block;
+                      margin: -.4em 1em -.4em -.4rem;
+                      font-weight: bold;
+                  }
+
+                  &:last-child {
+                      border-bottom: 1px solid var(--surface-d);
+                  }
+              }
+          }
+      }
+  }
+}

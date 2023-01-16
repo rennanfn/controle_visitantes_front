@@ -1,0 +1,100 @@
+<div class="header">
+  <h1>Editar Agendamento</h1>
+  <br />
+</div>
+
+<div [formGroup]="this.formEditAgendamento" class="body">
+  <br />
+  <div class="divvisitante">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      id="codVisitante"
+    >
+      <mat-label>Visitante</mat-label>
+
+      <input
+        type="text"
+        matInput
+        formControlName="visitante"
+        name="visitante"
+        readonly
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline" id="data">
+      <mat-label>Data</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="data"
+        name="data"
+      />
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="this.formEditAgendamento.get('data')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline" id="hora">
+      <mat-label>Hora</mat-label>
+      <input type="time" matInput formControlName="hora" name="hora" />
+
+      <mat-error *ngIf="this.formEditAgendamento.get('hora')?.errors"
+        >Campo Obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline" id="status">
+      <mat-label>Status</mat-label>
+      <mat-select type="text" matInput formControlName="status" name="status">
+        <mat-option value="Ativo">Ativo</mat-option>
+        <mat-option value="Cancelado">Cancelado</mat-option>
+        <!--<input type="text" matInput formControlName="status" name="status" />-->
+        <mat-error *ngIf="this.formEditAgendamento.get('status')?.errors"
+          >Campo Obrigatório</mat-error
+        >
+      </mat-select>
+    </mat-form-field>
+    <div class="divobserv">
+      <mat-form-field
+        class="example-full-width"
+        appearance="outline"
+        id="observacao"
+      >
+        <mat-label>Observação</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="observacao"
+          name="observacao"
+        />
+      </mat-form-field>
+
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
+<mat-dialog-content>
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    class="btn-block mat-elevation-z5"
+    (click)="salvarEdicao()"
+  >
+    Salvar
+  </button>
+  <button
+    style="margin-left: 10px"
+    mat-raised-button
+    type="button"
+    color="warn"
+    class="btn-block mat-elevation-z5"
+    (click)="cancelar()"
+  >
+    Cancelar
+  </button>
+</mat-dialog-content>
